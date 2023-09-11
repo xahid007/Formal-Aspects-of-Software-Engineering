@@ -1,0 +1,11 @@
+scheme SET_DATABASE = 
+  class
+     type
+       Person = Text,
+       Database = Person-set
+     value
+       Register: Person >< Database -> Database
+       Register(p,db) is db !! {p}
+     test_case
+      [t1]Register("Hasan", Register("Zahid",{}))
+end
