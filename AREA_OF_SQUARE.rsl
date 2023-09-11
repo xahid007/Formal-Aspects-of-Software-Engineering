@@ -1,0 +1,15 @@
+scheme AREA_OF_SQUARE = 
+  class 
+    type side = Real 
+    	 
+    value 
+      side1 : side = 10.0, 
+      side2 : side = 2.0, 
+      	
+      square : side >< side -> Real
+      square(s1, s2) is s1 * s2 
+    	 
+    test_case 
+     [t1] square(side1, side2) = 20.0, 
+     [t2] square(side1, side2) = 2.0 
+  end
