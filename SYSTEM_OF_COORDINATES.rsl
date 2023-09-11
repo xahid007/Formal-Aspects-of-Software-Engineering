@@ -1,0 +1,21 @@
+scheme SYSTEM_OF_COORDINATES=
+ class 
+    type
+      Position = Real >< Real
+     value
+         origin: Position = (0.0,0.0),
+	 pos1:  Position = (1.0, 1.0),
+	 pos2: Position = (1.0, 5.0),
+         distance: Position >< Position -> Real
+         distance(p1,p2) is
+           let
+	     (x1,y1)=p1,
+	     (x2,y2)=p2
+	   in
+	    ((x2-x1)**2.0 + (y2-y1)**2.0)**0.5
+	   end
+       test_case
+         [t1] distance(origin,origin) = 0.0,
+	 [t2] distance(pos1, pos2) = 6.0
+end
+        
